@@ -15,3 +15,27 @@ modules.order
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Ignore symbolic links to OCF headers
+modules/include/ocf/ocf_cache.h
+modules/include/ocf/ocf_cfg.h
+modules/include/ocf/ocf_cleaner.h
+modules/include/ocf/ocf_composite_volume.h
+modules/include/ocf/ocf_core.h
+modules/include/ocf/ocf_ctx.h
+modules/include/ocf/ocf_debug.h
+modules/include/ocf/ocf_def.h
+modules/include/ocf/ocf_err.h
+modules/include/ocf/ocf.h
+modules/include/ocf/ocf_io_class.h
+modules/include/ocf/ocf_io.h
+modules/include/ocf/ocf_logger.h
+modules/include/ocf/ocf_metadata.h
+modules/include/ocf/ocf_mngt.h
+modules/include/ocf/ocf_queue.h
+modules/include/ocf/ocf_stats.h
+modules/include/ocf/ocf_types.h
+modules/include/ocf/ocf_volume.h
+
+#config.out
+config.out
