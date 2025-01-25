@@ -36,6 +36,9 @@ modules/include/ocf/ocf_queue.h
 modules/include/ocf/ocf_stats.h
 modules/include/ocf/ocf_types.h
 modules/include/ocf/ocf_volume.h
+modules/include/ocf/cleaning/acp.h
+modules/include/ocf/cleaning/alru.h
+modules/include/ocf/promotion/nhit.h
 
 #config.out
 config.out
