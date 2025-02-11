@@ -228,8 +228,8 @@ int ocf_engine_hndl_fast_req(struct ocf_request *req)
 	const struct ocf_io_if *io_if;
 	int ret;
 
-	OCF_DEBUG_PARAM(req->cache, "Fast request");
-	
+	// OCF_DEBUG_PARAM(req->cache, "Fast request");
+	// OCF_DEBUG_PARAM(req->cache, "Read function pointer: %p", io_if->read);
 	io_if = ocf_get_io_if(req->cache_mode);
 	if (!io_if)
 		return -OCF_ERR_INVAL;
@@ -239,7 +239,9 @@ int ocf_engine_hndl_fast_req(struct ocf_request *req)
 	switch (req->rw) {
 	case OCF_READ:
 		// log read function pointer
-		OCF_DEBUG_PARAM(req->cache, "Read function pointer: %p", io_if->read);
+		// OCF_DEBUG_PARAM(req->cache, "Read function pointer: %p", io_if->read);
+		// log read function name
+		OCF_DEBUG_PARAM(req->cache, "Read function name: %s", io_if->name);
 		ret = io_if->read(req);
 		break;
 	case OCF_WRITE:
@@ -251,7 +253,9 @@ int ocf_engine_hndl_fast_req(struct ocf_request *req)
 
 	if (ret == OCF_FAST_PATH_NO)
 		ocf_req_put(req);
-
+	// is OCF_FAST_PATH_NO is 0?
+	if (ret == 0)
+		OCF_DEBUG_PARAM(req->cache, "Fast path no");
 	return ret;
 }
 
