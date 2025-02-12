@@ -44,7 +44,7 @@ static void _ocf_read_fast_complete(struct ocf_request *req, int error)
 		/* Not all requests finished */
 		return;
 	}
-
+	
 	OCF_DEBUG_PARAM(req->cache, "HIT completion with final error status: %d", req->error);
 	OCF_DEBUG_PARAM(req->cache, "FAST PATH COMPLETE");
 
