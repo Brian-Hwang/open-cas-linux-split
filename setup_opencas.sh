@@ -8,7 +8,7 @@ fi
 
 # Create RAM disk (10GB)
 echo "Creating RAM disk..."
-modprobe brd rd_size=10485760
+modprobe brd rd_size=1048576
 ln -s /dev/ram1 /dev/disk/by-id/ramdisk1
 
 # Verify RAM disk creation
@@ -38,7 +38,7 @@ fi
 
 # Add NVMe as core device
 echo "Adding NVMe as core device..."
-if ! casadm -A -i 1 -j 1 -d /dev/disk/by-id/nvme-Samsung_SSD_990_PRO_1TB_S6Z1NF0W600480B; then
+if ! casadm -A -i 1 -j 1 -d /dev/disk/by-id/nvme-Linux_1ec6b3b12c4a3d04; then
     echo "Failed to add core device"
     casadm -S -i 1  # Stop cache instance on failure
     exit 1

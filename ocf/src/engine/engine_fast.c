@@ -67,7 +67,7 @@ static void _ocf_read_fast_complete(struct ocf_request *req, int error)
 
 static int _ocf_read_fast_do(struct ocf_request *req)
  {
-     uint32_t mod_value = (req->byte_position + req->byte_length) % 10; 
+    //  uint32_t mod_value = (req->byte_position + req->byte_length) % 10; 
  
     //  / Cache miss handling /
      if (ocf_engine_is_miss(req)) {
@@ -76,13 +76,13 @@ static int _ocf_read_fast_do(struct ocf_request *req)
          return 0;
      }
  
-    //  / Submit Backend /
-     if (mod_value < 2) {
-         OCF_DEBUG_RQ(req, "Submit Backend");
-         OCF_DEBUG_RQ(req, "Handling request in BACKEND - 20%%");
-         ocf_read_pt_do(req);
-         return 0;
-     }
+    // //  / Submit Backend /
+    //  if (mod_value < 2) {
+    //      OCF_DEBUG_RQ(req, "Submit Backend");
+    //      OCF_DEBUG_RQ(req, "Handling request in BACKEND - 20%%");
+    //      ocf_read_pt_do(req);
+    //      return 0;
+    //  }
  
     //  / Get OCF request - increase reference counter /
      ocf_req_get(req);

@@ -42,3 +42,7 @@ modules/include/ocf/promotion/nhit.h
 
 #config.out
 config.out
+
+
+#shell
+setup_opencas.sh
